@@ -12,7 +12,7 @@ export default {
 
 <style lang="scss" scoped>
   .el-header{
-    background-color: rgb(145, 177, 219);
+    background-color: #3d7bcc;
     color: #ffffff;
     font-weight: 700;
     font-size: 24px;

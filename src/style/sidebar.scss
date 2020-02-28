@@ -3,6 +3,8 @@
     transition: width 0.28s;
     width: $sideBarWidth;
     font-weight: 600;
+    background: $menuBg;
+    
 
     .el-menu {
       border: none;
@@ -46,7 +48,8 @@
       width: $sideBarWidth;
       text-align: center;
       height: 30px;
-      font-size: 24px;
+      line-height: 30px;
+      font-size: 20px;
       color: #fff;
       background: rgb(63, 62, 62);
       cursor: pointer;
