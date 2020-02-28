@@ -1,5 +1,5 @@
 <template>
-  <el-aside :width="variables.sideBarWidth">
+  <el-aside :width="asideWidth">
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
         :collapse="iscollapse"
@@ -13,7 +13,7 @@
         <sidebar-item v-for="route in menuData" :key="route.path" :item="route" :base-path="route.path" />
       </el-menu>
     </el-scrollbar>
-    <div class="fold-warpper" :style="{width: variables.sideBarWidth}" @click="toggleSideBar">
+    <div class="fold-warpper" @click="toggleSideBar">
       <i :class="sidebar.opened ? 'el-icon-s-fold' : 'el-icon-s-unfold'" />
     </div>
   </el-aside>
@@ -53,11 +53,13 @@ export default {
     },
     iscollapse() {
       return !this.sidebar.opened
+    },
+    asideWidth() {
+      return this.variables.sideBarWidth
     }
   },
   methods: {
     toggleSideBar() {
-      this.variables.sideBarWidth = this.sidebar.opened ? '54px' : '210px'
       this.$store.dispatch('app/toggleSideBar')
     }
   }
