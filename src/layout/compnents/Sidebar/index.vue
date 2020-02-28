@@ -1,28 +1,43 @@
 <template>
-  <el-menu
-    :default-active="activeMenu"
-    class="el-menu-vertical-demo"
-    :background-color="variables.menuBg"
-    :text-color="variables.menuText"
-    :active-text-color="variables.menuActiveText"
-    :collapse-transition="false"
-    @open="handleOpen"
-    @close="handleClose"
-  >
-    <sidebar-item v-for="route in menuData" :key="route.path" :item="route" :base-path="route.path" />
-  </el-menu>
-
+  <el-aside :width="variables.sideBarWidth">
+    <el-scrollbar wrap-class="scrollbar-wrapper">
+      <el-menu
+        :collapse="iscollapse"
+        :default-active="activeMenu"
+        class="el-menu-vertical-demo"
+        :background-color="variables.menuBg"
+        :text-color="variables.menuText"
+        :active-text-color="variables.menuActiveText"
+        :collapse-transition="false"
+      >
+        <sidebar-item v-for="route in menuData" :key="route.path" :item="route" :base-path="route.path" />
+      </el-menu>
+    </el-scrollbar>
+    <div class="fold-warpper" :style="{width: variables.sideBarWidth}" @click="toggleSideBar">
+      <i :class="sidebar.opened ? 'el-icon-s-fold' : 'el-icon-s-unfold'" />
+    </div>
+  </el-aside>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import variables from '@/style/variables.scss'
 import SidebarItem from './SidebarItem'
 import { constantRoutes } from '@/router'
+
 export default {
   components: { SidebarItem },
   computed: {
-    variables() {
-      return variables
+    ...mapGetters([
+      'sidebar'
+    ]),
+    variables: {
+      get() {
+        return variables
+      },
+      set(val) {
+        console.log(val)
+      }
     },
     menuData() {
       return constantRoutes
@@ -35,14 +50,15 @@ export default {
         return meta.activeMenu
       }
       return path
+    },
+    iscollapse() {
+      return !this.sidebar.opened
     }
   },
   methods: {
-    handleOpen() {
-
-    },
-    handleClose() {
-
+    toggleSideBar() {
+      this.variables.sideBarWidth = this.sidebar.opened ? '54px' : '210px'
+      this.$store.dispatch('app/toggleSideBar')
     }
   }
 }

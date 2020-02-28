@@ -34,11 +34,15 @@ export const constantRoutes = [
   {
     path: '',
     component: Layout,
+    meta: {
+      title: 'shouye'
+    },
     children: [
       {
         path: 'list',
-        component: () => import(/* webpackChunkName: "home" */'@/views/home/Index'),
-        meta: { title: '实时监控', icon: 'el-icon-data-line', roles: ['admin'] }
+        component: () => import(/* webpackChunkName: "home" */'@/views/Kanban'),
+        name: 'List',
+        meta: { title: '实时监控', icon: 'el-icon-data-line', roles: ['admin'], affix: true }
       }
     ]
   },
@@ -52,12 +56,14 @@ export const constantRoutes = [
     children: [
       {
         path: 'keshi',
+        name: 'KeShi',
         component: () => import(/* webpackChunkName: "home" */'@/views/home/Index'),
         hidden: false,
         meta: { title: '科室管理', icon: '', roles: ['admin'] }
       },
       {
         path: 'bingqu',
+        name: 'Bingqu',
         component: () => import(/* webpackChunkName: "home" */'@/views/home/Index'),
         meta: { title: '病区管理', icon: '', roles: ['admin'] }
       }

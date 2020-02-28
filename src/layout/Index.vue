@@ -1,19 +1,29 @@
 <template>
-  <div>
+  <div class="app-warpper">
     <!-- 头部 -->
     <app-header />
-    <el-container>
+    <el-container :class="{'hideSidebar': !sidebar.opened}">
       <!-- 菜单 -->
       <sidebar class="sidebar-container" />
-      <app-main />
+
+      <div class="main-container">
+        <tags-view />
+        <app-main />
+      </div>
+
     </el-container>
   </div>
 </template>
 
 <script>
-import { AppHeader, AppMain, Sidebar } from './compnents'
+import { mapGetters } from 'vuex'
+import { AppHeader, AppMain, Sidebar, TagsView } from './compnents'
 export default {
-  components: { AppHeader, AppMain, Sidebar }
+  name: 'Layout',
+  components: { AppHeader, AppMain, Sidebar, TagsView },
+  computed: {
+    ...mapGetters(['sidebar'])
+  }
 }
 </script>
 

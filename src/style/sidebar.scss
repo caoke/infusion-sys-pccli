@@ -2,6 +2,7 @@
   .sidebar-container{
     transition: width 0.28s;
     width: $sideBarWidth;
+    font-weight: 600;
 
     .el-menu {
       border: none;
@@ -36,7 +37,72 @@
       }
     }
 
+    .fold-warpper{
+      transition: width 0.28s;
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      padding: 5px 0;
+      text-align: center;
+      height: 30px;
+      font-size: 24px;
+      color: #fff;
+      background: rgb(63, 62, 62);
+      cursor: pointer;
+    }
+
   }
+
+  .hideSidebar {
+    .sidebar-container {
+      width: 54px !important;
+    }
+
+    .submenu-title-noDropdown {
+      padding: 0 !important;
+      position: relative;
+
+      .el-tooltip {
+        padding: 0 !important;
+
+        .svg-icon,
+        i {
+          margin-left: 15px;
+        }
+      }
+    }
+
+    .el-submenu {
+      overflow: hidden;
+
+      &>.el-submenu__title {
+        padding: 0 !important;
+
+        .svg-icon ,i{
+          margin-left: 15px;
+        }
+
+        .el-submenu__icon-arrow {
+          display: none;
+        }
+      }
+    }
+
+    .el-menu--collapse {
+      .el-submenu {
+        &>.el-submenu__title {
+          &>span {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            visibility: hidden;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
   a{
     text-decoration: none;
   }
