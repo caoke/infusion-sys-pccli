@@ -2,12 +2,12 @@
   <div class="app-warpper">
     <!-- 头部 -->
     <app-header />
-    <el-container :class="{'hideSidebar': !sidebar.opened}">
+    <el-container :class="{'hideSidebar': !sidebar.opened,'hideTagsView': hideTags}">
       <!-- 菜单 -->
       <sidebar class="sidebar-container" />
 
       <div class="main-container">
-        <tags-view />
+        <tags-view v-if="!hideTags" />
         <app-main />
       </div>
 
@@ -22,7 +22,7 @@ export default {
   name: 'Layout',
   components: { AppHeader, AppMain, Sidebar, TagsView },
   computed: {
-    ...mapGetters(['sidebar'])
+    ...mapGetters(['sidebar', 'hideTags'])
   }
 }
 </script>

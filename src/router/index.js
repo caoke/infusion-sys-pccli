@@ -55,16 +55,16 @@ export const constantRoutes = [
     },
     children: [
       {
-        path: 'keshi',
-        name: 'KeShi',
-        component: () => import(/* webpackChunkName: "home" */'@/views/home/Index'),
+        path: 'department',
+        name: 'Department',
+        component: () => import(/* webpackChunkName: "home" */'@/views/hospital/department/Index'),
         hidden: false,
         meta: { title: '科室管理', icon: '', roles: ['admin'] }
       },
       {
-        path: 'bingqu',
-        name: 'Bingqu',
-        component: () => import(/* webpackChunkName: "home" */'@/views/home/Index'),
+        path: 'area',
+        name: 'Area',
+        component: () => import(/* webpackChunkName: "home" */'@/views/hospital/area/Index'),
         meta: { title: '病区管理', icon: '', roles: ['admin'] }
       }
     ]

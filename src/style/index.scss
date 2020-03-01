@@ -1,5 +1,7 @@
 @import './variables.scss';
 @import './sidebar.scss';
+@import './transition.scss';
+@import './ali/iconfont.css';
 
 html,body{
   padding: 0;
@@ -48,9 +50,29 @@ a:hover {
     height: calc( 100% - 60px );
     .main-container{
       width: 100%;
+      overflow: auto;
       .app-main{
-        margin: 20px;
+        height: calc( 100% - 35px );
+        .container{
+          margin: 20px;
+        }
+        // 表头样式
+        .table-warpper{
+          .el-table__header-wrapper{
+            .el-table__header{
+              th{
+                  background-color: #dbe0df;
+                  color: #000;
+              }
+            }
+          }
+        }
       }
+    }
+  }
+  .hideTagsView{
+    .app-main{
+      height: 100% !important;
     }
   }
 }

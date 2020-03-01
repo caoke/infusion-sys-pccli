@@ -1,0 +1,37 @@
+{
+  "id": "1664965",
+  "name": "输液系统",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "8346803",
+      "name": "输液",
+      "font_class": "shuye",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "8407415",
+      "name": "输液",
+      "font_class": "shuye1",
+      "unicode": "e65f",
+      "unicode_decimal": 58975
+    },
+    {
+      "icon_id": "12257978",
+      "name": "输液袋",
+      "font_class": "shuyedai",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "10208869",
+      "name": "电量",
+      "font_class": "dianliang",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    }
+  ]
+}
