@@ -6,6 +6,7 @@
 
 <script>
 import Item from './Item'
+
 export default {
   name: 'Kanban',
   components: { Item },

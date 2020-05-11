@@ -3,6 +3,7 @@ const getters = {
   visitedViews: state => state.tagsView.visitedViews,
   cachedViews: state => state.tagsView.cachedViews,
   permission_routes: state => state.permission.routes,
-  hideTags: state => state.setting.hideTags
+  hideTags: state => state.setting.hideTags,
+  token: state => state.user.token
 }
 export default getters

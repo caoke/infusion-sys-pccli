@@ -27,6 +27,14 @@ Vue.use(Router)
 
 export const constantRoutes = [
   {
+    path: '/login',
+    component: () => import(/* webpackChunkName: "login" */ 'views/login/index'),
+    meta: {
+      title: '登录'
+    },
+    hidden: true
+  },
+  {
     path: '/',
     redirect: 'list',
     hidden: true
