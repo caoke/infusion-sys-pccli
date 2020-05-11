@@ -178,8 +178,5 @@ $cursor: #fff;
       }
     }
   }
-
-  .svg-container {
-  }
 }
 </style>

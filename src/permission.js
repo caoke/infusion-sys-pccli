@@ -1,6 +1,6 @@
 import router from './router'
 import store from './store'
-import { Message } from 'element-ui'
+// import { Message } from 'element-ui'
 import { getToken } from '@/utils/auth' // get token from cookie
 import NProgress from 'nprogress' // progress bar 头部进度条
 // import defaultSettings from '@/settings'
